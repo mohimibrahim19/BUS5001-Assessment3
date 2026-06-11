@@ -1,0 +1,88 @@
+{
+  "experiment": "Q3 ESG Message Triage",
+  "model_llm": "Claude API (claude-sonnet-4-20250514)",
+  "model_baseline": "facebook/bart-large-mnli (Hugging Face zero-shot)",
+  "messages": [
+    {
+      "id": 1,
+      "input": "There is a water leak in Building C that has been running all morning.",
+      "llm_output": {
+        "issue_category": "Facilities",
+        "sub_category": "Water Waste",
+        "urgency": "HIGH",
+        "urgency_reasoning": "An ongoing water leak causes immediate resource waste and potential structural damage.",
+        "sentiment": "NEGATIVE",
+        "followup_required": "Y",
+        "recommended_team": "Facilities Management",
+        "escalation_reason": "Physical infrastructure issue requiring immediate on-site inspection and repair.",
+        "data_sensitivity_risk": "LOW",
+        "response_timeframe": "IMMEDIATE",
+        "brief_summary": "A water leak in Building C has been running all morning and requires urgent facilities attention."
+      },
+      "huggingface_baseline": {
+        "category": "Facilities",
+        "category_confidence": 0.492,
+        "urgency": "MEDIUM",
+        "urgency_confidence": 0.29,
+        "recommended_team": "Sustainability Team",
+        "team_confidence": 0.403,
+        "followup": "requires immediate followup",
+        "followup_confidence": 0.978
+      }
+    },
+    {
+      "id": 2,
+      "input": "The recycling bins are contaminated again and no one seems to be checking them.",
+      "llm_output": {
+        "issue_category": "Environmental",
+        "sub_category": "Recycling Contamination",
+        "urgency": "MEDIUM",
+        "urgency_reasoning": "Repeated contamination indicates a systemic issue affecting recycling effectiveness.",
+        "sentiment": "NEGATIVE",
+        "followup_required": "Y",
+        "recommended_team": "Sustainability Team",
+        "escalation_reason": "Recurring waste management issue requiring policy enforcement and staff education.",
+        "data_sensitivity_risk": "LOW",
+        "response_timeframe": "WITHIN 48 HOURS",
+        "brief_summary": "Recycling bins are repeatedly contaminated with no oversight, undermining waste management goals."
+      },
+      "huggingface_baseline": {
+        "category": "Environmental",
+        "category_confidence": 0.479,
+        "urgency": "HIGH",
+        "urgency_confidence": 0.328,
+        "recommended_team": "Facilities Management",
+        "team_confidence": 0.422,
+        "followup": "requires immediate followup",
+        "followup_confidence": 0.963
+      }
+    },
+    {
+      "id": 3,
+      "input": "I want to report that one of our suppliers may not meet our sustainability policy.",
+      "llm_output": {
+        "issue_category": "Governance",
+        "sub_category": "Supplier Compliance",
+        "urgency": "HIGH",
+        "urgency_reasoning": "Supplier non-compliance with sustainability policy creates regulatory and reputational risk.",
+        "sentiment": "NEGATIVE",
+        "followup_required": "Y",
+        "recommended_team": "Procurement Team",
+        "escalation_reason": "Potential breach of supplier sustainability requirements needs formal procurement review.",
+        "data_sensitivity_risk": "MEDIUM",
+        "response_timeframe": "WITHIN 48 HOURS",
+        "brief_summary": "An employee has flagged that a supplier may not comply with the organisation's sustainability policy."
+      },
+      "huggingface_baseline": {
+        "category": "Procurement",
+        "category_confidence": 0.287,
+        "urgency": "LOW",
+        "urgency_confidence": 0.365,
+        "recommended_team": "Sustainability Team",
+        "team_confidence": 0.473,
+        "followup": "requires immediate followup",
+        "followup_confidence": 0.978
+      }
+    }
+  ]
+}
